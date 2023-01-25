@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import SignUp from "./components/SignUp";
 import { Container } from "react-bootstrap";
@@ -11,17 +11,16 @@ function App() {
       className="d-flex align-items-center justify-content-center"
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <AuthProvider>
-          <Routes>
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
-        </AuthProvider>
-        <SignUp />
+        <Router>
+          <AuthProvider>
+            <Routes>
+              <Route path="/signup" element={<SignUp />} />
+            </Routes>
+          </AuthProvider>
+        </Router>
       </div>
     </Container>
   );
 }
-
-// Having trouble with routing :/
 
 export default App;
