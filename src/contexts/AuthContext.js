@@ -22,6 +22,18 @@ const AuthProvider = ({ children }) => {
     return auth.signOut();
   }
 
+  const resetPassword = (email) => {
+    return auth.sendPasswordResetEmail(email);
+  }
+
+  const updateEmail = (email) => {
+    return currentUser.updateEmail(email);
+  }
+
+  const updatePassword = (password) => {
+    return currentUser.updatePassword(password);
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       // we won't render until our user is set for the first time
@@ -36,7 +48,10 @@ const AuthProvider = ({ children }) => {
     currentUser,
     signup,
     login,
-    logout
+    logout,
+    resetPassword,
+    updateEmail,
+    updatePassword
   }
 
   return (

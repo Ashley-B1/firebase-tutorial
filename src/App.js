@@ -4,6 +4,7 @@ import SignUp from "./components/SignUp";
 import DashBoard from "./components/DashBoard";
 import LogIn from "./components/LogIn";
 import ForgotPassword from "./components/ForgotPassword";
+import UpdateProfile from "./components/UpdateProfile";
 
 import { Container } from "react-bootstrap";
 import AuthProvider from "./contexts/AuthContext";
@@ -22,6 +23,11 @@ function App() {
               <Route path='/' element={
                 <PrivateRoute>
                   <DashBoard />
+                </PrivateRoute>
+              } />
+              <Route path='/update-profile' element={
+                <PrivateRoute>
+                  <UpdateProfile />
                 </PrivateRoute>
               } />
               <Route path="/signup" element={<SignUp />} />
