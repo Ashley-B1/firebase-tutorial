@@ -1,5 +1,6 @@
 import "firebase/compat/auth";
 import firebase from  'firebase/compat/app';
+import { getFirestore } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 // Using environment variables makes it easier to switch over from development to production values without having to constantly switch between the two.
@@ -15,4 +16,5 @@ const app = firebase.initializeApp({
 
 // Initialize Firebase
 export const auth = app.auth()
+export const db = getFirestore(app);
 export default app;

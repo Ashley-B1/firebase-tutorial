@@ -5,6 +5,8 @@ import DashBoard from "./components/DashBoard";
 import LogIn from "./components/LogIn";
 import ForgotPassword from "./components/ForgotPassword";
 import UpdateProfile from "./components/UpdateProfile";
+// TEST FETCHING PRODUCTS FROM FIRESTORE
+import FetchDocs from "./components/FetchDocs";
 
 import { Container } from "react-bootstrap";
 import AuthProvider from "./contexts/AuthContext";
@@ -33,6 +35,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
               <Route path='/forgot-password' element={<ForgotPassword />} />
+              <Route path='/test-fetching' element={<FetchDocs />} />
             </Routes>
           </AuthProvider>
         </Router>
